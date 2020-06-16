@@ -42,7 +42,14 @@
         Senha deve ser informada!
       </div>
     </div>
-    <button class="btn btn-primary btn-block mb-3" type="submit" (click)="entrar()">Entrar</button>
-    <img src="C:\Projetos\QuickBuy\QuickBuy.Web\ClientApp\src\assets\img\quick-logo.jpg" />
+    <button class="btn btn-primary btn-block mb-3" type="submit" (click)="entrar()" [disabled]="ativar_spinner">
+      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" ngIf="ativar_spinner"></span>
+      Entrar
+    </button>
+
+    <div class="alert alert-danger" *ngIf="mensagem">
+      {{mensagem}}
+    </div>
+    <img src="../../../assets/img/quick-logo.jpg" />
   </form>
 </div>
